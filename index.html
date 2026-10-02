@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ishan Bhatt | Portfolio</title>
+
+    <style>
+
+        /* =========================
+           GENERAL STYLING
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b1020;
+            color: #f5f7ff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(11, 16, 32, 0.85);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 25px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #6c8cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd2e8;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #6c8cff;
+        }
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            padding: 120px 25px 80px;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.25;
+        }
+
+        .circle.one {
+            width: 350px;
+            height: 350px;
+            background: #5d6cff;
+            top: 100px;
+            left: -100px;
+        }
+
+        .circle.two {
+            width: 300px;
+            height: 300px;
+            background: #a855f7;
+            bottom: 50px;
+            right: -80px;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            width: 100%;
+            margin: auto;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-intro {
+            color: #6c8cff;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #6c8cff;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: #b9c1d9;
+            font-size: 20px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 13px 23px;
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary-button {
+            background: #6c8cff;
+            color: white;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-3px);
+            background: #829cff;
+        }
+
+        .secondary-button {
+            border: 1px solid #39425e;
+            color: #dce2f5;
+        }
+
+        .secondary-button:hover {
+            background: #171e36;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: #8f99b5;
+            margin-bottom: 45px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #0e1428;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            color: #b9c1d9;
+            font-size: 17px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+        }
+
+        .info-card {
+            background: #151c33;
+            padding: 30px;
+            border-radius: 15px;
+
+            border: 1px solid #252e4a;
+
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: #6c8cff;
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: #aeb7d0;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #171f38;
+            border: 1px solid #2c3655;
+
+            padding: 10px 17px;
+
+            border-radius: 50px;
+
+            color: #d9def0;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #6c8cff;
+            border-color: #6c8cff;
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-card {
+            background: #151c33;
+            border: 1px solid #252e4a;
+
+            border-radius: 15px;
+            padding: 30px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            border-color: #6c8cff;
+        }
+
+        .education-card h3 {
+            font-size: 24px;
+        }
+
+        .education-card p {
+            color: #aeb7d0;
+        }
+
+        .date {
+            color: #6c8cff;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background: #0e1428;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #151c33;
+
+            border: 1px solid #252e4a;
+
+            padding: 30px;
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #6c8cff;
+        }
+
+        .project-icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #aeb7d0;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #6c8cff;
+            font-weight: bold;
+        }
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .experience-card {
+            border-left: 3px solid #6c8cff;
+            padding-left: 25px;
+
+            margin-bottom: 40px;
+        }
+
+        .experience-card h3 {
+            font-size: 23px;
+        }
+
+        .experience-card .company {
+            color: #6c8cff;
+            font-weight: bold;
+        }
+
+        .experience-card p {
+            color: #aeb7d0;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #aeb7d0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #252e4a;
+
+            text-align: center;
+
+            padding: 30px;
+
+            color: #727c99;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-card {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="nav-container">
+
+        <div class="logo">
+            I<span>B</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="circle one"></div>
+    <div class="circle two"></div>
+
+    <div class="hero-content">
+
+        <div class="small-intro">
+            Hello, I'm
+        </div>
+
+        <h1>
+            Ishan<br>
+            <span>Bhatt.</span>
+        </h1>
+
+        <p class="hero-description">
+            Finance and Business Analytics & Information Technology student
+            at Rutgers University, interested in finance, data, and using
+            analytics to make smarter financial decisions.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="button primary-button">
+                View My Work
+            </a>
+
+            <a href="#contact" class="button secondary-button">
+                Get In Touch
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            About Me
+        </h2>
+
+        <p class="section-subtitle">
+            A little bit about who I am.
+        </p>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I'm Ishan Bhatt, a Rutgers University student
+                    majoring in Finance and Business Analytics and
+                    Information Technology.
+                </p>
+
+                <p>
+                    I'm fascinated by how money works and how data can
+                    help make smarter financial decisions. I enjoy
+                    learning about saving, budgeting, and investing,
+                    while analyzing data to uncover patterns that
+                    guide better choices.
+                </p>
+
+                <p>
+                    Through my degree, I hope to combine finance and
+                    analytics skills to solve real-world financial
+                    problems and make data-driven decisions.
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>What I'm Interested In</h3>
+
+                <p>
+                    Finance &nbsp;•&nbsp;
+                    Data Analytics &nbsp;•&nbsp;
+                    Technology &nbsp;•&nbsp;
+                    Business Strategy &nbsp;•&nbsp;
+                    Information Systems
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+        <p class="section-subtitle">
+            My academic background.
+        </p>
+
+        <div class="education-card">
+
+            <div>
+
+                <h3>
+                    Rutgers University
+                </h3>
+
+                <p>
+                    Finance and Business Analytics and
+                    Information Technology
+                </p>
+
+                <p>
+                    Rutgers Business School • New Brunswick, New Jersey
+                </p>
+
+            </div>
+
+            <div class="date">
+                2025 – 2029
+            </div>
+
+        </div>
+
+        <div class="education-card">
+
+            <div>
+
+                <h3>
+                    South Brunswick High School
+                </h3>
+
+                <p>
+                    South Brunswick, New Jersey
+                </p>
+
+            </div>
+
+            <div class="date">
+                2021 – 2025
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+        <p class="section-subtitle">
+            Tools and technologies I work with.
+        </p>
+
+        <div class="skills">
+
+            <div class="skill">Excel</div>
+
+            <div class="skill">SQL</div>
+
+            <div class="skill">Tableau</div>
+
+            <div class="skill">MySQL</div>
+
+            <div class="skill">Data Analysis</div>
+
+            <div class="skill">Financial Analysis</div>
+
+            <div class="skill">Business Analytics</div>
+
+            <div class="skill">Microsoft Office</div>
+
+            <div class="skill">HTML</div>
+
+            <div class="skill">CSS</div>
+
+            <div class="skill">JavaScript</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section class="projects" id="projects">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Projects
+        </h2>
+
+        <p class="section-subtitle">
+            Projects and work I'll be adding here.
+        </p>
+
+        <div class="project-grid">
+
+            <!-- ADD YOUR PROJECTS HERE -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Project Coming Soon
+                </h3>
+
+                <p>
+                    I'll be adding a data analytics project here.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Project Coming Soon
+                </h3>
+
+                <p>
+                    I'll be adding a technology or programming project here.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    💼
+                </div>
+
+                <h3>
+                    Project Coming Soon
+                </h3>
+
+                <p>
+                    I'll be adding a business or finance project here.
+                </p>
+
+                <a href="#" class="project-link">
+                    View Project →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Experience
+        </h2>
+
+        <p class="section-subtitle">
+            Experience I'll be adding here.
+        </p>
+
+        <!-- ADD YOUR EXPERIENCE HERE -->
+
+        <div class="experience-card">
+
+            <h3>
+                Experience Coming Soon
+            </h3>
+
+            <div class="company">
+                Professional Experience
+            </div>
+
+            <p>
+                I'll be adding my professional experience, internships,
+                leadership, and extracurricular activities here.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="section-container">
+
+        <h2>
+            Let's Connect.
+        </h2>
+
+        <p>
+            Whether you're interested in collaborating,
+            discussing a project, or simply connecting,
+            feel free to reach out.
+        </p>
+
+        <div class="social-links">
+
+            <a href="tel:+17327404705" class="button secondary-button">
+                732-740-4705
+            </a>
+
+            <a href="https://github.com/"
+               class="button primary-button"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+            <a href="https://www.linkedin.com/in/ishan-bhatt-159167322/"
+               class="button secondary-button"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a href="mailto:ishanbhatt1025@gmail.com"
+               class="button secondary-button">
+                Email Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Ishan Bhatt. Built with HTML & CSS.
+    </p>
+
+</footer>
+
+
+</body>
+</html>
