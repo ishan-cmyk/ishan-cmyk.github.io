@@ -34,6 +34,7 @@
             color: inherit;
         }
 
+
         /* =========================
            NAVIGATION
         ========================= */
@@ -85,6 +86,7 @@
             color: #6c8cff;
         }
 
+
         /* =========================
            HERO SECTION
         ========================= */
@@ -124,13 +126,23 @@
             right: -80px;
         }
 
-        .hero-content {
+        .hero-layout {
             max-width: 1100px;
             width: 100%;
             margin: auto;
 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 60px;
+
             position: relative;
             z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
         }
 
         .small-intro {
@@ -194,6 +206,38 @@
             transform: translateY(-3px);
         }
 
+
+        /* =========================
+           PROFILE PICTURE
+        ========================= */
+
+        .profile-picture {
+            width: 300px;
+            height: 300px;
+
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 50%;
+
+            border: 5px solid #6c8cff;
+
+            box-shadow:
+                0 0 40px rgba(108, 140, 255, 0.25),
+                0 0 80px rgba(168, 85, 247, 0.15);
+
+            transition: 0.4s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.04);
+
+            box-shadow:
+                0 0 50px rgba(108, 140, 255, 0.35),
+                0 0 100px rgba(168, 85, 247, 0.2);
+        }
+
+
         /* =========================
            GENERAL SECTIONS
         ========================= */
@@ -217,6 +261,7 @@
             margin-bottom: 45px;
         }
 
+
         /* =========================
            ABOUT
         ========================= */
@@ -228,7 +273,9 @@
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
+
             gap: 50px;
+
             align-items: center;
         }
 
@@ -243,7 +290,9 @@
 
         .info-card {
             background: #151c33;
+
             padding: 30px;
+
             border-radius: 15px;
 
             border: 1px solid #252e4a;
@@ -264,6 +313,7 @@
             color: #aeb7d0;
         }
 
+
         /* =========================
            SKILLS
         ========================= */
@@ -276,6 +326,7 @@
 
         .skill {
             background: #171f38;
+
             border: 1px solid #2c3655;
 
             padding: 10px 17px;
@@ -290,8 +341,10 @@
         .skill:hover {
             background: #6c8cff;
             border-color: #6c8cff;
+
             transform: translateY(-3px);
         }
+
 
         /* =========================
            EDUCATION
@@ -299,16 +352,21 @@
 
         .education-card {
             background: #151c33;
+
             border: 1px solid #252e4a;
 
             border-radius: 15px;
+
             padding: 30px;
 
             display: flex;
+
             justify-content: space-between;
+
             gap: 20px;
 
             transition: 0.3s;
+
             margin-bottom: 20px;
         }
 
@@ -327,9 +385,12 @@
 
         .date {
             color: #6c8cff;
+
             white-space: nowrap;
+
             font-weight: bold;
         }
+
 
         /* =========================
            PROJECTS
@@ -341,7 +402,9 @@
 
         .project-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 25px;
         }
 
@@ -351,6 +414,7 @@
             border: 1px solid #252e4a;
 
             padding: 30px;
+
             border-radius: 15px;
 
             transition: 0.3s;
@@ -358,11 +422,13 @@
 
         .project-card:hover {
             transform: translateY(-7px);
+
             border-color: #6c8cff;
         }
 
         .project-icon {
             font-size: 35px;
+
             margin-bottom: 20px;
         }
 
@@ -372,13 +438,16 @@
 
         .project-card p {
             color: #aeb7d0;
+
             margin-bottom: 20px;
         }
 
         .project-link {
             color: #6c8cff;
+
             font-weight: bold;
         }
+
 
         /* =========================
            EXPERIENCE
@@ -386,6 +455,7 @@
 
         .experience-card {
             border-left: 3px solid #6c8cff;
+
             padding-left: 25px;
 
             margin-bottom: 40px;
@@ -397,13 +467,16 @@
 
         .experience-card .company {
             color: #6c8cff;
+
             font-weight: bold;
         }
 
         .experience-card p {
             color: #aeb7d0;
+
             margin-top: 10px;
         }
+
 
         /* =========================
            CONTACT
@@ -415,21 +488,28 @@
 
         .contact h2 {
             font-size: 45px;
+
             margin-bottom: 15px;
         }
 
         .contact p {
             color: #aeb7d0;
+
             max-width: 600px;
+
             margin: 0 auto 30px;
         }
 
         .social-links {
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
         }
+
 
         /* =========================
            FOOTER
@@ -445,6 +525,7 @@
             color: #727c99;
         }
 
+
         /* =========================
            MOBILE
         ========================= */
@@ -453,6 +534,26 @@
 
             .nav-links {
                 display: none;
+            }
+
+            .hero-layout {
+                flex-direction: column-reverse;
+
+                text-align: center;
+            }
+
+            .profile-picture {
+                width: 220px;
+                height: 220px;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .about-grid {
@@ -476,7 +577,9 @@
     </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      NAVIGATION
@@ -523,6 +626,7 @@
 </nav>
 
 
+
 <!-- =========================
      HERO
 ========================= -->
@@ -530,40 +634,68 @@
 <section class="hero">
 
     <div class="circle one"></div>
+
     <div class="circle two"></div>
 
-    <div class="hero-content">
 
-        <div class="small-intro">
-            Hello, I'm
+    <div class="hero-layout">
+
+
+        <div class="hero-text">
+
+            <div class="small-intro">
+                Hello, I'm
+            </div>
+
+
+            <h1>
+                Ishan<br>
+                <span>Bhatt.</span>
+            </h1>
+
+
+            <p class="hero-description">
+
+                Finance and Business Analytics & Information Technology
+                student at Rutgers University, interested in finance,
+                data, and using analytics to make smarter financial
+                decisions.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#projects" class="button primary-button">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="button secondary-button">
+                    Get In Touch
+                </a>
+
+            </div>
+
         </div>
 
-        <h1>
-            Ishan<br>
-            <span>Bhatt.</span>
-        </h1>
 
-        <p class="hero-description">
-            Finance and Business Analytics & Information Technology student
-            at Rutgers University, interested in finance, data, and using
-            analytics to make smarter financial decisions.
-        </p>
+        <!-- =========================
+             PROFILE PICTURE
+             Make sure Headshot.jpg is
+             in the same GitHub repository
+        ========================= -->
 
-        <div class="buttons">
+        <img
+            src="Headshot.jpg"
+            alt="Ishan Bhatt"
+            class="profile-picture"
+        >
 
-            <a href="#projects" class="button primary-button">
-                View My Work
-            </a>
-
-            <a href="#contact" class="button secondary-button">
-                Get In Touch
-            </a>
-
-        </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -574,59 +706,84 @@
 
     <div class="section-container">
 
+
         <h2 class="section-title">
             About Me
         </h2>
+
 
         <p class="section-subtitle">
             A little bit about who I am.
         </p>
 
+
         <div class="about-grid">
+
 
             <div class="about-text">
 
-                <p>
-                    I'm Ishan Bhatt, a Rutgers University student
-                    majoring in Finance and Business Analytics and
-                    Information Technology.
-                </p>
 
                 <p>
-                    I'm fascinated by how money works and how data can
-                    help make smarter financial decisions. I enjoy
+
+                    I'm Ishan Bhatt, a Rutgers University student
+                    majoring in Finance and Business Analytics &
+                    Information Technology.
+
+                </p>
+
+
+                <p>
+
+                    I'm fascinated by how money works and how data
+                    can help make smarter financial decisions. I enjoy
                     learning about saving, budgeting, and investing,
                     while analyzing data to uncover patterns that
                     guide better choices.
+
                 </p>
+
 
                 <p>
-                    Through my degree, I hope to combine finance and
+
+                    With my degree, I hope to apply both finance and
                     analytics skills to solve real-world financial
                     problems and make data-driven decisions.
+
                 </p>
 
+
             </div>
+
 
             <div class="info-card">
 
-                <h3>What I'm Interested In</h3>
+
+                <h3>
+                    What I'm Interested In
+                </h3>
+
 
                 <p>
+
                     Finance &nbsp;•&nbsp;
                     Data Analytics &nbsp;•&nbsp;
+                    Investing &nbsp;•&nbsp;
                     Technology &nbsp;•&nbsp;
                     Business Strategy &nbsp;•&nbsp;
                     Information Systems
+
                 </p>
 
+
             </div>
+
 
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -637,40 +794,59 @@
 
     <div class="section-container">
 
+
         <h2 class="section-title">
             Education
         </h2>
+
 
         <p class="section-subtitle">
             My academic background.
         </p>
 
+
+        <!-- Rutgers -->
+
         <div class="education-card">
+
 
             <div>
 
                 <h3>
-                    Rutgers University
+                    Rutgers Business School
                 </h3>
 
+
                 <p>
-                    Finance and Business Analytics and
+                    Rutgers University
+                </p>
+
+
+                <p>
+                    Finance and Business Analytics &
                     Information Technology
                 </p>
 
+
                 <p>
-                    Rutgers Business School • New Brunswick, New Jersey
+                    New Brunswick, New Jersey
                 </p>
 
             </div>
+
 
             <div class="date">
                 2025 – 2029
             </div>
 
+
         </div>
 
+
+        <!-- High School -->
+
         <div class="education-card">
+
 
             <div>
 
@@ -678,21 +854,26 @@
                     South Brunswick High School
                 </h3>
 
+
                 <p>
                     South Brunswick, New Jersey
                 </p>
 
             </div>
 
+
             <div class="date">
                 2021 – 2025
             </div>
 
+
         </div>
+
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -703,43 +884,81 @@
 
     <div class="section-container">
 
+
         <h2 class="section-title">
             Skills
         </h2>
 
+
         <p class="section-subtitle">
-            Tools and technologies I work with.
+            Tools and areas I'm developing experience in.
         </p>
+
 
         <div class="skills">
 
-            <div class="skill">Excel</div>
 
-            <div class="skill">SQL</div>
+            <div class="skill">
+                Excel
+            </div>
 
-            <div class="skill">Tableau</div>
 
-            <div class="skill">MySQL</div>
+            <div class="skill">
+                SQL
+            </div>
 
-            <div class="skill">Data Analysis</div>
 
-            <div class="skill">Financial Analysis</div>
+            <div class="skill">
+                Tableau
+            </div>
 
-            <div class="skill">Business Analytics</div>
 
-            <div class="skill">Microsoft Office</div>
+            <div class="skill">
+                MySQL
+            </div>
 
-            <div class="skill">HTML</div>
 
-            <div class="skill">CSS</div>
+            <div class="skill">
+                Data Analysis
+            </div>
 
-            <div class="skill">JavaScript</div>
+
+            <div class="skill">
+                Financial Analysis
+            </div>
+
+
+            <div class="skill">
+                Business Analytics
+            </div>
+
+
+            <div class="skill">
+                Microsoft Office
+            </div>
+
+
+            <div class="skill">
+                HTML
+            </div>
+
+
+            <div class="skill">
+                CSS
+            </div>
+
+
+            <div class="skill">
+                JavaScript
+            </div>
+
 
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -750,17 +969,21 @@
 
     <div class="section-container">
 
+
         <h2 class="section-title">
             Projects
         </h2>
+
 
         <p class="section-subtitle">
             Projects and work I'll be adding here.
         </p>
 
+
         <div class="project-grid">
 
-            <!-- ADD YOUR PROJECTS HERE -->
+
+            <!-- PROJECT 1 -->
 
             <div class="project-card">
 
@@ -768,13 +991,16 @@
                     📊
                 </div>
 
+
                 <h3>
                     Project Coming Soon
                 </h3>
 
+
                 <p>
                     I'll be adding a data analytics project here.
                 </p>
+
 
                 <a href="#" class="project-link">
                     View Project →
@@ -782,6 +1008,9 @@
 
             </div>
 
+
+
+            <!-- PROJECT 2 -->
 
             <div class="project-card">
 
@@ -789,13 +1018,17 @@
                     💻
                 </div>
 
+
                 <h3>
                     Project Coming Soon
                 </h3>
 
+
                 <p>
-                    I'll be adding a technology or programming project here.
+                    I'll be adding a technology or programming
+                    project here.
                 </p>
+
 
                 <a href="#" class="project-link">
                     View Project →
@@ -803,6 +1036,9 @@
 
             </div>
 
+
+
+            <!-- PROJECT 3 -->
 
             <div class="project-card">
 
@@ -810,13 +1046,16 @@
                     💼
                 </div>
 
+
                 <h3>
                     Project Coming Soon
                 </h3>
 
+
                 <p>
                     I'll be adding a business or finance project here.
                 </p>
+
 
                 <a href="#" class="project-link">
                     View Project →
@@ -824,11 +1063,13 @@
 
             </div>
 
+
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -839,36 +1080,49 @@
 
     <div class="section-container">
 
+
         <h2 class="section-title">
             Experience
         </h2>
+
 
         <p class="section-subtitle">
             Experience I'll be adding here.
         </p>
 
+
         <!-- ADD YOUR EXPERIENCE HERE -->
 
+
         <div class="experience-card">
+
 
             <h3>
                 Experience Coming Soon
             </h3>
 
+
             <div class="company">
                 Professional Experience
             </div>
 
+
             <p>
-                I'll be adding my professional experience, internships,
-                leadership, and extracurricular activities here.
+
+                I'll be adding my professional experience,
+                internships, leadership, and extracurricular
+                activities here.
+
             </p>
 
+
         </div>
+
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
@@ -879,46 +1133,73 @@
 
     <div class="section-container">
 
+
         <h2>
             Let's Connect.
         </h2>
 
+
         <p>
-            Whether you're interested in collaborating,
-            discussing a project, or simply connecting,
-            feel free to reach out.
+
+            Interested in connecting, collaborating, or
+            learning more about my work? Feel free to reach out.
+
         </p>
+
 
         <div class="social-links">
 
-            <a href="tel:+17327404705" class="button secondary-button">
-                732-740-4705
+
+            <!-- PHONE -->
+
+            <a
+                href="tel:+17327404705"
+                class="button secondary-button"
+            >
+                📱 732-740-4705
             </a>
 
-            <a href="https://github.com/"
-               class="button primary-button"
-               target="_blank"
-               rel="noopener noreferrer">
+
+            <!-- GITHUB -->
+
+            <a
+                href="https://github.com/"
+                class="button primary-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 GitHub
             </a>
 
-            <a href="https://www.linkedin.com/in/ishan-bhatt-159167322/"
-               class="button secondary-button"
-               target="_blank"
-               rel="noopener noreferrer">
+
+            <!-- LINKEDIN -->
+
+            <a
+                href="https://www.linkedin.com/in/ishan-bhatt-159167322/"
+                class="button secondary-button"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 LinkedIn
             </a>
 
-            <a href="mailto:ishanbhatt1025@gmail.com"
-               class="button secondary-button">
-                Email Me
+
+            <!-- EMAIL -->
+
+            <a
+                href="mailto:ishanbhatt1025@gmail.com"
+                class="button secondary-button"
+            >
+                ✉ Email Me
             </a>
+
 
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- =========================
